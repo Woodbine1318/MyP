@@ -21,6 +21,9 @@ module.exports = {
       colors: {
         'mp-dark-blue': 'var(--mp-dark-blue)',
         'mp-light-blue': 'var(--mp-light-blue)',
+        'mp-grey': 'var(--mp-grey)',
+        'mp-gray': 'var(--mp-grey)',
+        'mp-disabled': 'rgba(0, 0, 0, 0.6)',
         facebook: 'var(--color-facebook)',
         twitter: 'var(--color-twitter)',
         instagram: 'var(--color-instagram)',
@@ -35,6 +38,7 @@ module.exports = {
       },
       borderWidth: {
         12: '12px',
+        14: '14px',
       },
       borderRadius: {
         12: '1.2rem',
@@ -44,7 +48,13 @@ module.exports = {
       },
     },
   },
-  variants: {},
+  variants: {
+    extend: {
+      backgroundColor: ['disabled'],
+      textColor: ['disabled'],
+      cursor: ['disabled'],
+    },
+  },
   plugins: [
     plugin(({ addBase, config }) => {
       addBase({

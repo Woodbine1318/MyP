@@ -10,6 +10,8 @@ const Header = () => {
   return (
     <header className="sticky top-0 left-0 py-10 px-8 bg-white z-10 md:py-16 md:px-16">
       <Container className="flex flex-row justify-between items-center">
+        {pathname === '/' ? <div /> : null}
+
         <Link to="/" aria-label="Home">
           <Logo />
         </Link>
