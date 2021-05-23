@@ -3,11 +3,16 @@ import { StaticImage } from 'gatsby-plugin-image';
 
 import Layout from '../components/layout';
 import Seo from '../components/seo';
-import { FaWhatsapp } from 'react-icons/fa';
-import { FiMail } from 'react-icons/fi';
 import Container from '../components/container';
+import { graphql } from 'gatsby';
 
-const IndexPage = () => (
+const IndexPage = ({
+  data: {
+    site: {
+      siteMetadata: { contactInfo },
+    },
+  },
+}) => (
   <Layout>
     <Seo title="Home" />
 
@@ -29,8 +34,8 @@ const IndexPage = () => (
 
         <p className="text-sm mb-28 md:mb-48">
           Reach out to{' '}
-          <a href="mailto:info@mypaediatrician.co.uk" className="underline font-semibold">
-            info@mypaediatrician.co.uk
+          <a href={`mailto:${contactInfo.email}`} className="underline font-semibold">
+            {contactInfo.email}
           </a>
         </p>
 
@@ -44,5 +49,17 @@ const IndexPage = () => (
     </Container>
   </Layout>
 );
+
+export const query = graphql`
+  query HomePage {
+    site {
+      siteMetadata {
+        contactInfo {
+          email
+        }
+      }
+    }
+  }
+`;
 
 export default IndexPage;
