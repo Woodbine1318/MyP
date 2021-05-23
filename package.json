@@ -17,6 +17,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@fontsource/hind": "^4.3.0",
     "@fontsource/pt-sans": "^4.3.0",
     "autoprefixer": "^10.2.5",
     "gatsby": "^3.4.1",

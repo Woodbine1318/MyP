@@ -49,14 +49,16 @@ module.exports = {
     plugin(({ addBase, config }) => {
       addBase({
         ':root': {
-          '--mp-dark-blue': '#0D76D5',
-          '--mp-light-blue': '#36B8F0',
+          '--mp-light-blue': '#31C1FF',
+          '--mp-dark-blue': '#138FFF',
+          '--mp-grey': '#F1F4F6',
+          '--mp-gray': 'var(--grey)',
           '--color-facebook': '#415a93',
           '--color-twitter': '#4aa0ec',
           '--color-instagram': '#d0426d',
           '--color-whatsapp': '#00B852',
-          '--font-family-display': 'PT Sans',
-          '--font-family-body': 'PT Sans, sans-serif',
+          '--font-family-display': '"PT Sans", sans-serif',
+          '--font-family-body': '"Hind", sans-serif',
           // Perfect Fourth Scale
           '--font-size-xs': '1rem',
           '--font-size-sm': '1.333rem',
@@ -79,6 +81,7 @@ module.exports = {
           '-moz-osx-font-smoothing': 'grayscale',
           fontSmoothing: config('theme.fontSmoothing.antialiased'),
           fontFamily: config('theme.fontFamily.body'),
+          fontWeight: config('theme.fontWeight.normal'),
           fontSize: config('theme.fontSize.base'),
         },
         '.webkit-mask-image': {

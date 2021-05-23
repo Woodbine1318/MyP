@@ -1153,6 +1153,11 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
+"@fontsource/hind@^4.3.0":
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/@fontsource/hind/-/hind-4.3.0.tgz#62ad8e947248ab1e9ad99ba88c00fd24d644c875"
+  integrity sha512-wGiqDh2LFA7vOfrNsjjqt7B7HFXcKowDmaKyA6DqbPWpJA18rC10hYY8LqCvRemlheD41uXte9lY/EQOMq8EMA==
+
 "@fontsource/pt-sans@^4.3.0":
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/@fontsource/pt-sans/-/pt-sans-4.3.0.tgz#d20ddc52532cccecca5da9852a62300b7ad467d4"
