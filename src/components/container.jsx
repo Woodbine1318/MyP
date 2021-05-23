@@ -1,5 +1,7 @@
 import React from 'react';
 
-const Container = ({ children }) => <div className="w-full max-w-screen-2xl mx-auto">{children}</div>;
+const Container = ({ children, className }) => (
+  <div className={`w-full max-w-screen-xl mx-auto ${className}`}>{children}</div>
+);
 
 export default Container;
