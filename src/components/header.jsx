@@ -8,7 +8,7 @@ const Header = () => {
   const { pathname } = useLocation();
 
   return (
-    <header className="sticky top-0 left-0 py-10 px-8 bg-white z-10 md:py-16 md:px-16">
+    <header className="sticky top-0 left-0 py-10 bg-white z-10 md:py-16 md:px-16">
       <Container className="flex flex-row justify-between items-center">
         {pathname === '/' ? <div className="flex-1" /> : null}
 
@@ -25,7 +25,7 @@ const Header = () => {
               </a>
             </p>
           ) : (
-            <Link to="/blog" className="font-semibold text-lg">
+            <Link to="/blog" className="font-semibold text-md md:text-lg">
               Blog
             </Link>
           )}

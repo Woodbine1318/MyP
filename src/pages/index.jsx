@@ -27,7 +27,7 @@ const IndexPage = () => (
           Coming Soon
         </button>
 
-        <p className="text-sm mb-48">
+        <p className="text-sm mb-28 md:mb-48">
           Reach out to{' '}
           <a href="mailto:info@mypaediatrician.co.uk" className="underline font-semibold">
             info@mypaediatrician.co.uk
