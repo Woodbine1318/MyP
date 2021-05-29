@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
-import Layout from '../components/layout';
-import Container from '../components/container';
+import Layout from '../../components/layout';
+import Container from '../../components/container';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
 const BlogPage = ({ data }) => {
@@ -53,9 +53,6 @@ export const query = graphql`
           id
           slug
           title
-          summary {
-            text: summary
-          }
           backgroundImage {
             gatsbyImageData(layout: CONSTRAINED, width: 300)
           }
