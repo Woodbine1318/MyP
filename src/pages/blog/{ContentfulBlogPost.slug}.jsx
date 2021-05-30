@@ -38,7 +38,7 @@ export const query = graphql`
       id
       title
       publishDate: createdAt
-      formattedPublishedDate: createdAt(formatString: "MMMM do, YYYY")
+      formattedPublishedDate: createdAt(formatString: "MMMM Do, YYYY")
       summary {
         text: summary
       }
