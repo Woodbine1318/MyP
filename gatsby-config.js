@@ -27,8 +27,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `MyPaediatrician`,
+        short_name: `MP`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#31C1FF`,
@@ -36,6 +36,7 @@ module.exports = {
         icon: `src/assets/images/icon.png`, // This path is relative to the root of the site.
       },
     },
+    'gatsby-plugin-offline',
     `gatsby-plugin-gatsby-cloud`,
     'gatsby-plugin-eslint',
     'gatsby-plugin-postcss',
