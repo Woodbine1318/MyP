@@ -3,3 +3,8 @@
 @tailwind components;
 
 @tailwind utilities;
+
+.content-renderer p:not(:last-of-type) {
+  margin-bottom: 2.4rem;
+  /* max-width: 65ch; */
+}

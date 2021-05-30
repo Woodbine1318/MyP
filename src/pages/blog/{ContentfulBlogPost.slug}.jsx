@@ -3,6 +3,7 @@ import Layout from '../../components/layout';
 import { graphql } from 'gatsby';
 import Container from '../../components/container';
 import { GatsbyImage } from 'gatsby-plugin-image';
+import ContentRenderer from '../../components/content-renderer';
 
 const BlogPost = ({ data: { contentfulBlogPost: post } }) => {
   return (
@@ -24,6 +25,8 @@ const BlogPost = ({ data: { contentfulBlogPost: post } }) => {
             imgClassName="rounded-tl-36 rounded-tr-12 md:rounded-br-36 md:rounded-bl-12"
           />
         </section>
+
+        <ContentRenderer sections={post.content} />
       </Container>
     </Layout>
   );
@@ -41,6 +44,31 @@ export const query = graphql`
       }
       backgroundImage {
         gatsbyImageData(layout: CONSTRAINED, width: 300)
+      }
+      content {
+        __typename
+        ... on ContentfulTextSection {
+          id
+          title
+          body {
+            childMarkdownRemark {
+              html
+            }
+          }
+        }
+        ... on ContentfulFigureSection {
+          id
+          title
+          body {
+            childMarkdownRemark {
+              html
+            }
+          }
+          alignment
+          image {
+            gatsbyImageData(layout: CONSTRAINED, width: 1280)
+          }
+        }
       }
     }
   }
