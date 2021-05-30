@@ -4,9 +4,10 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: `MyPaediatric`,
+    siteUrl: 'https://www.mypaediatrician.co.uk',
+    title: `MyPaediatrician`,
     description: `On-demand paediatric care service. Improving the accessibility to paediatric opinion in primary care.`,
-    author: `@mypaediatric`,
+    author: `@mypaediatrician`,
     contactInfo: {
       email: 'info@mypaediatrician.co.uk',
     },

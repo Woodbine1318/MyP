@@ -4,10 +4,19 @@ import { graphql } from 'gatsby';
 import Container from '../../components/container';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import ContentRenderer from '../../components/content-renderer';
+import SEO from '../../components/seo';
 
-const BlogPost = ({ data: { contentfulBlogPost: post } }) => {
+const BlogPost = ({ location: { pathname }, data: { contentfulBlogPost: post } }) => {
   return (
     <Layout>
+      <SEO
+        title={post.title}
+        description={post.summary.text}
+        canonicalPath={pathname}
+        image={`https:${post.backgroundImage.file.url}`}
+        og={{ type: 'article', published_time: post.publishedDate }}
+      />
+
       <Container className="pt-12">
         <section className="flex flex-col flex-nowrap py-8 px-8 bg-mp-grey rounded-tl-36 rounded-br-36 rounded-tr-12 rounded-bl-12 md:flex-row md:justify-center md:py-32 md:items-center">
           <div className="order-2 max-w-prose md:order-1 md:flex-1 md:mr-7">
@@ -44,6 +53,9 @@ export const query = graphql`
       }
       backgroundImage {
         gatsbyImageData(layout: CONSTRAINED, width: 300)
+        file {
+          url
+        }
       }
       content {
         __typename

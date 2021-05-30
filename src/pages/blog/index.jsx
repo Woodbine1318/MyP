@@ -3,8 +3,9 @@ import { graphql, Link } from 'gatsby';
 import Layout from '../../components/layout';
 import Container from '../../components/container';
 import { GatsbyImage } from 'gatsby-plugin-image';
+import SEO from '../../components/seo';
 
-const BlogPage = ({ data }) => {
+const BlogPage = ({ location: { pathname }, data }) => {
   const {
     allContentfulBlogPost: { edges: posts },
   } = data;
@@ -12,6 +13,8 @@ const BlogPage = ({ data }) => {
 
   return (
     <Layout>
+      <SEO title="Blog" canonicalPath={pathname} />
+
       <Container className="pt-12">
         <section className="flex flex-col flex-nowrap py-8 px-8 bg-mp-grey rounded-tl-36 rounded-br-36 rounded-tr-12 rounded-bl-12 md:py-32 md:items-center">
           <h1 className="font-bold text-xl md:text-2xl">Welcome to our Blog</h1>

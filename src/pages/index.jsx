@@ -2,7 +2,7 @@ import React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 
 import Layout from '../components/layout';
-import Seo from '../components/seo';
+import SEO from '../components/seo';
 import Container from '../components/container';
 import { graphql } from 'gatsby';
 
@@ -14,7 +14,7 @@ const IndexPage = ({
   },
 }) => (
   <Layout>
-    <Seo title="Home" />
+    <SEO title="Home" canonicalPath="/" />
 
     <Container>
       <section className="pt-32 text-center min-w-full">
