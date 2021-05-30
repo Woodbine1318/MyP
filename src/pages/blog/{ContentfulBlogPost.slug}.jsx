@@ -69,6 +69,14 @@ export const query = graphql`
             gatsbyImageData(layout: CONSTRAINED, width: 1280)
           }
         }
+        ... on ContentfulImageGallery {
+          id
+          title
+          images {
+            id
+            gatsbyImageData(layout: CONSTRAINED, width: 1280)
+          }
+        }
       }
     }
   }

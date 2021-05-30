@@ -29,6 +29,27 @@ const getContentTypeSection = (section) => {
         />
       </div>
     );
+
+  if (section.__typename === 'ContentfulImageGallery')
+    return (
+      <div key={section.id}>
+        {section.title ? <h2 className="font-bold text-xl text-center mb-16">{section.title}</h2> : null}
+
+        <div
+          className={`grid grid-cols-1 gap-16 ${section.images.length > 1 ? 'md:grid-cols-2' : ''} ${
+            section.images.length > 2 ? 'lg:grid-cols-3' : ''
+          }`}
+        >
+          {section.images.map((img) => (
+            <GatsbyImage
+              image={img.gatsbyImageData}
+              alt=""
+              imgClassName="rounded-tl-36 rounded-tr-12 rounded-br-36 rounded-bl-12"
+            />
+          ))}
+        </div>
+      </div>
+    );
 };
 
 const ContentRenderer = ({ sections }) => {
@@ -55,6 +76,11 @@ ContentRenderer.propTypes = {
       image: PropTypes.shape({
         gatsbyImageData: PropTypes.object.isRequired,
       }),
+      images: PropTypes.arrayOf(
+        PropTypes.shape({
+          gatsbyImageData: PropTypes.object.isRequired,
+        }),
+      ),
     }),
   ),
 };
