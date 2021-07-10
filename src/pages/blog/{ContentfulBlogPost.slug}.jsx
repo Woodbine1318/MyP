@@ -35,7 +35,7 @@ const BlogPost = ({ location: { pathname }, data: { contentfulBlogPost: post } }
           />
         </section>
 
-        <ContentRenderer sections={post.content} />
+        <div className="rich-content" dangerouslySetInnerHTML={{ __html: post.content.childMarkdownRemark.html }} />
       </Container>
     </Layout>
   );
@@ -58,36 +58,8 @@ export const query = graphql`
         }
       }
       content {
-        __typename
-        ... on ContentfulTextSection {
-          id
-          title
-          body {
-            childMarkdownRemark {
-              html
-            }
-          }
-        }
-        ... on ContentfulFigureSection {
-          id
-          title
-          body {
-            childMarkdownRemark {
-              html
-            }
-          }
-          alignment
-          image {
-            gatsbyImageData(layout: CONSTRAINED, width: 1280)
-          }
-        }
-        ... on ContentfulImageGallery {
-          id
-          title
-          images {
-            id
-            gatsbyImageData(layout: CONSTRAINED, width: 1280)
-          }
+        childMarkdownRemark {
+          html
         }
       }
     }
