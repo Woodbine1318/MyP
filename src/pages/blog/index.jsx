@@ -28,7 +28,7 @@ const BlogPage = ({ location: { pathname }, data }) => {
                 <GatsbyImage
                   image={post.backgroundImage.gatsbyImageData}
                   alt=""
-                  className="block w-full"
+                  className="block w-full h-80"
                   imgClassName="rounded-tl-36 rounded-tr-12"
                 />
               </Link>
